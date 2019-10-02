@@ -10,18 +10,24 @@ public class cote_serveur
 	try {
 		// On écoute sur le port <PORT> de 49152 jusqu'a 65535.
 		 ecoute=new ServerSocket(49252);
+		 System.out.println("new serveur");
 		while (true) 
 		{
 		// On accepte une demande de connexion d'un client
+		
 		Socket client=ecoute.accept();
-		System.out.println("vous etes en connexion");
-		/*InputStream in = s.getInputStream();
-		 OutputStream out = s.getOutputStream();
-		 ObjectInputStream objIn = new ObjectInputStream(in);
-		 ObjectOutputStream objOut = new ObjectOutputStream(out);
-		Integer I= new Ineger(3);
+		System.out.println("client connecter");
+		
+		OutputStream out = client.getOutputStream();
+		ObjectOutputStream objOut = new ObjectOutputStream(out);
+		
+		InputStream in = client.getInputStream();
+		ObjectInputStream objIn = new ObjectInputStream(in);
+		 
+		Integer I= new Integer(3);
 		objOut.writeObject(I);
-		UnObjet O= (UnObjet)objIn.readObject(O);*/
+		System.out.println("J'envoie : "+I);
+		//stock_object O= (stock_object)objIn.readObject(O);
 		client.close();
 		}
 		}
