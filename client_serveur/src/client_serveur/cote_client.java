@@ -24,7 +24,7 @@ public class cote_client {
 	 Integer I;
 	try {
 		I = (Integer)objIn.readObject();
-		System.out.println("J'ai reçu "+I);
+		System.out.println("J'ai reçu "+I+I.getClass().getName()+I.getClass().getFields()[0].getName());
 	} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
